@@ -109,3 +109,7 @@ El componente \#robot-bubble\ ya no es un indicador de estado constante, sino un
 ### Optimización de Interacción
 
 - Se redujo el texto de guía y se implementó un intervalo de 20 segundos para mejorar la experiencia de usuario (UX).
+
+### Optimización Táctil
+
+- Se eliminó el comportamiento por defecto de 'tap highlight' y se ajustó la jerarquía de capas (z-index) para evitar superposición en móviles.

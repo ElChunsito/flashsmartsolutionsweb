@@ -33,6 +33,8 @@
     padding: 0;
     box-sizing: border-box;
     max-width: 100%;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
 }
 
 html {
@@ -640,6 +642,11 @@ ul {
         flex-direction: column;
     }
     
+    .robot-assistant {
+        transform: translateY(-50%) scale(0.7);
+        right: 2%;
+    }
+    
     .hero-buttons .btn {
         width: 100%;
         text-align: center;
@@ -666,7 +673,7 @@ ul {
     top: 50%;
     right: 5%;
     transform: translateY(-50%);
-    z-index: 1000;
+    z-index: 999;
     display: flex;
     flex-direction: column;
     align-items: center;
