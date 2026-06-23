@@ -60,6 +60,7 @@
     <header id="header">
         <div class="container header-container">
             <a href="#inicio" class="logo">
+                <i class="fas fa-bolt logo-icon"></i>
                 <span class="logo-text">FLASH <span class="accent-text">SMART</span> SOLUTIONS</span>
             </a>
             
@@ -69,11 +70,7 @@
                     <li><a href="#servicios" class="nav-link">Servicios</a></li>
                     <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
                     <li><a href="#contacto" class="nav-link">Contacto</a></li>
-                    <li>
-                        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Cambiar tema">
-                            <i class="fas fa-sun"></i>
-                        </button>
-                    </li>
+                    <!-- Botón de tema eliminado para mantener la estética Dark Tech -->
                 </ul>
             </nav>
             
@@ -214,6 +211,7 @@
         <div class="container footer-container">
             <div class="footer-info">
                 <a href="#inicio" class="logo">
+                    <i class="fas fa-bolt logo-icon"></i>
                     <span class="logo-text">FLASH <span class="accent-text">SMART</span> SOLUTIONS</span>
                 </a>
                 <p>Soluciones Tecnológicas Inteligentes en Mar del Plata y zonas de influencia.</p>
@@ -246,6 +244,17 @@
     <a href="https://wa.me/5492235337035" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
+
+    <!-- Asistente Robótico Interactivo -->
+    <div id="robot-assistant" class="robot-assistant">
+        <div class="robot-nav-menu" id="robot-nav-menu">
+            <!-- Botones inyectados vía JS -->
+        </div>
+        <div class="robot-bubble" id="robot-bubble">
+            <!-- Icono SVG inyectado vía JS -->
+        </div>
+        <i class="fas fa-robot robot-main-icon" id="robot-trigger"></i>
+    </div>
 
     <script src="script.js" defer></script>
 </body>
