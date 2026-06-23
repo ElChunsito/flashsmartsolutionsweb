@@ -113,3 +113,7 @@ El componente \#robot-bubble\ ya no es un indicador de estado constante, sino un
 ### Optimización Táctil
 
 - Se eliminó el comportamiento por defecto de 'tap highlight' y se ajustó la jerarquía de capas (z-index) para evitar superposición en móviles.
+
+### Estilo Visual
+
+- Se mejoró la tipografía y el gradiente del H1 para una identidad visual más tecnológica.
