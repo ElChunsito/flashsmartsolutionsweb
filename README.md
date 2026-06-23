@@ -90,3 +90,22 @@ Para agregar una nueva sección al radar del asistente y a su menú interactivo:
 
 ### Incidencias
 - **[Resuelto]** Se detectó error de carga/renderizado tras cambios en el robot (las secciones con efecto fade-in dejaron de aparecer). Causa: Bloque de código huérfano y error de sintaxis en el archivo \script.js\ al intentar declarar el IntersectionObserver. Se procedió a la estabilización y limpieza del código. Los servicios y el robot asistente ahora cargan correctamente.
+
+### Asistente Persistente
+
+Se rediseñó el comportamiento del robot (\#robot-assistant\) asegurando que tenga visibilidad permanente (\display: flex\, \position: fixed\). Nunca se oculta ni se elimina del DOM.
+
+El componente \#robot-bubble\ ya no es un indicador de estado constante, sino un **elemento temporal de interacción** tipo tooltip. Aparece dinámicamente a los 2 segundos de carga para saludar al usuario y desaparece de forma automática y suave a los 7 segundos mediante \opacity\. Si el usuario interactúa con el robot antes de este lapso, el globo se oculta inmediatamente, cediendo protagonismo al panel de navegación.
+
+### Fix: Estabilidad del Asistente
+
+- **Contención del Globo (Overflow):** Se corrigió un problema visual donde el globo de texto (\#robot-bubble\) desbordaba la pantalla. Se le asignó \position: absolute\ con anclaje a la derecha (\ight: 0\), \max-width: 200px\ y \white-space: normal\ para forzar saltos de línea ordenados.
+- **Restauración de State-Sync:** Al separar la burbuja de texto, los íconos sincronizados perdieron su contenedor. Se creó un nuevo elemento independiente (\#robot-head-indicator\) dedicado a alojar los íconos de cada sección. El \IntersectionObserver\ se ha reconectado a este elemento, recuperando la animación de cambio y la precisión de sección. Además, se agregaron registros (\console.log\) para facilitar el debug de la detección de secciones en el viewport.
+
+### Ajustes de UI
+
+- Se reposicionó el globo de bienvenida debajo del robot para mejorar la visibilidad de la interfaz.
+
+### Optimización de Interacción
+
+- Se redujo el texto de guía y se implementó un intervalo de 20 segundos para mejorar la experiencia de usuario (UX).

@@ -686,6 +686,44 @@ ul {
 }
 
 .robot-bubble {
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-right: 15px;
+    transform: translateY(-50%);
+    width: max-content;
+    max-width: 130px;
+    background: rgba(22, 27, 34, 0.95);
+    border: 1px solid var(--primary);
+    border-radius: 8px;
+    padding: 8px 12px;
+    color: #fff;
+    font-size: 0.9rem;
+    white-space: normal;
+    word-wrap: break-word;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+/* Triángulo del speech bubble apuntando hacia la derecha */
+.robot-bubble::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -6px;
+    transform: translateY(-50%);
+    border-width: 6px 0 6px 6px;
+    border-style: solid;
+    border-color: transparent transparent transparent var(--primary);
+    display: block;
+    width: 0;
+}
+
+.robot-head-indicator {
     background: rgba(0, 0, 0, 0.5);
     border: 1px solid var(--primary);
     border-radius: 50%;
@@ -702,30 +740,22 @@ ul {
     transition: all 0.3s ease;
 }
 
-.robot-bubble svg {
+.robot-head-indicator svg {
     width: 18px;
     height: 18px;
     color: var(--primary);
 }
 
-.robot-bubble.show {
+.robot-head-indicator.show {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* Triángulo del speech bubble */
-.robot-bubble::after {
-    content: '';
-    position: absolute;
-    bottom: -6px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-width: 6px 6px 0;
-    border-style: solid;
-    border-color: var(--primary) transparent transparent transparent;
-    display: block;
-    width: 0;
+.robot-bubble.show {
+    opacity: 1;
 }
+
+
 
 @keyframes float-robot {
     0% { transform: translateY(-50%); }

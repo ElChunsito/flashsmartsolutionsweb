@@ -6,12 +6,37 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav-link');
     const yearSpan = document.getElementById('year');
     const robotBubble = document.getElementById('robot-bubble');
+    const robotHeadIndicator = document.getElementById('robot-head-indicator');
     const robotTrigger = document.getElementById('robot-trigger');
     const robotNavMenu = document.getElementById('robot-nav-menu');
 
-    // Configuración inicial del robot
+    // Configuración del globo de guía (Ciclo interactivo)
+    let bubbleInterval;
+    let welcomeTimeout;
+
+    function showRobotBubbleCycle() {
+        if (!robotBubble) return;
+        // Solo muestra el globo si el menú no está abierto
+        if (robotNavMenu && !robotNavMenu.classList.contains('open')) {
+            robotBubble.classList.add('show');
+            // Ocultar a los 3 segundos
+            welcomeTimeout = setTimeout(() => {
+                robotBubble.classList.remove('show');
+            }, 3000);
+        }
+    }
+
+    function startBubbleCycle() {
+        clearInterval(bubbleInterval);
+        clearTimeout(welcomeTimeout);
+        // Dispara la primera vez en 2s si acaba de cargar, o simplemente respeta el ciclo
+        bubbleInterval = setInterval(showRobotBubbleCycle, 10000);
+    }
+
     if (robotBubble) {
-        setTimeout(() => robotBubble.classList.add('show'), 1000);
+        // Ejecución inicial rápida y luego entra en el ciclo
+        setTimeout(showRobotBubbleCycle, 2000);
+        startBubbleCycle();
     }
 
     // Set current year in footer
@@ -145,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 2. Observer sincronizado
+    // 2. Observer Sincronizado para los Iconos de la Cabeza
     const robotObserverOptions = {
         root: null,
         rootMargin: '-40% 0px -40% 0px',
@@ -156,21 +181,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const robotObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting && robotBubble) {
+            if (entry.isIntersecting && robotHeadIndicator) {
                 const currentSection = entry.target.getAttribute('id');
+                console.log(`[Robot] Sección detectada en viewport: ${currentSection}`);
+                
                 const data = robotSectionsData.find(s => s.id === currentSection) || robotSectionsData[0];
                 
                 if (currentRobotIconId !== data.id) {
                     currentRobotIconId = data.id;
-                    robotBubble.classList.remove('show');
+                    robotHeadIndicator.classList.remove('show');
+                    
                     const robotAssistant = document.getElementById('robot-assistant');
                     if(robotAssistant) {
                         robotAssistant.style.transform = 'translateY(-50%) scale(1.1)';
                     }
                     
                     setTimeout(() => {
-                        robotBubble.innerHTML = data.iconSvg;
-                        robotBubble.classList.add('show');
+                        robotHeadIndicator.innerHTML = data.iconSvg;
+                        robotHeadIndicator.classList.add('show');
                         if(robotAssistant) {
                             robotAssistant.style.transform = 'translateY(-50%) scale(1)';
                         }
@@ -185,21 +213,36 @@ document.addEventListener('DOMContentLoaded', () => {
         sectionsForRobot.forEach(sec => robotObserver.observe(sec));
     }
 
+    // 3. Eventos de interacción del Robot (Persistente)
     if (robotTrigger && robotNavMenu) {
         robotTrigger.addEventListener('click', (e) => {
             e.stopPropagation();
+            
+            // Si el globo de texto sigue mostrándose, lo cerramos inmediatamente
+            if (robotBubble && robotBubble.classList.contains('show')) {
+                robotBubble.classList.remove('show');
+            }
+            // Resetea el ciclo para no interrumpir al usuario
+            startBubbleCycle();
+            
             robotNavMenu.classList.toggle('open');
-            if (robotNavMenu.classList.contains('open')) {
-                if(robotBubble) robotBubble.classList.remove('show');
-            } else {
-                if(robotBubble) robotBubble.classList.add('show');
+            // Al abrir el menú, se oculta el indicador de la cabeza; al cerrar, reaparece
+            if (robotHeadIndicator) {
+                if (robotNavMenu.classList.contains('open')) {
+                    robotHeadIndicator.classList.remove('show');
+                } else {
+                    robotHeadIndicator.classList.add('show');
+                }
             }
         });
 
         document.addEventListener('click', (e) => {
             if (!robotNavMenu.contains(e.target) && !robotTrigger.contains(e.target)) {
-                robotNavMenu.classList.remove('open');
-                if(robotBubble) robotBubble.classList.add('show');
+                if (robotNavMenu.classList.contains('open')) {
+                    robotNavMenu.classList.remove('open');
+                    startBubbleCycle(); // Reinicia al cerrar clickeando fuera
+                }
+                if (robotHeadIndicator) robotHeadIndicator.classList.add('show');
             }
         });
     }
