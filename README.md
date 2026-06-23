@@ -117,3 +117,7 @@ El componente \#robot-bubble\ ya no es un indicador de estado constante, sino un
 ### Estilo Visual
 
 - Se mejoró la tipografía y el gradiente del H1 para una identidad visual más tecnológica.
+
+### UI Update
+
+- Se rediseñó el H1 separando marca y servicio para mejorar la legibilidad y estética profesional.
