@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     currentRobotIconId = data.id;
                     robotHeadIndicator.classList.remove('show');
                     
-                    const robotAssistant = document.getElementById('robot-assistant');
+                    const robotAssistant = document.getElementById('robot');
                     if(robotAssistant) {
                         robotAssistant.classList.add('pulse');
                     }
