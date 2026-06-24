@@ -1,54 +1,54 @@
 # Flash Smart Solutions - Web
 
-Este proyecto contiene el sitio web de Flash Smart Solutions, dise√±ado con una est√©tica "Dark Tech" para una experiencia de usuario moderna y profesional.
+Este proyecto contiene el sitio web de Flash Smart Solutions, dise√É¬±ado con una est√É¬©tica "Dark Tech" para una experiencia de usuario moderna y profesional.
 
 ## Estructura de Archivos
 
-- `index.html`: Archivo principal con la estructura sem√°ntica y optimizaci√≥n SEO Local (Meta tags, JSON-LD, encabezados optimizados).
-- `styles.css`: Hoja de estilos principal que implementa el dise√±o Dark Tech, variables de color ne√≥n (`#0a0b10`, `#00d4ff`), y efectos de interacci√≥n (hover, zoom, pulse).
-- `script.js`: L√≥gica de interactividad (men√∫ hamburguesa, scroll spy, animaciones fade-in con Intersection Observer).
-- `vercel.json`: Archivo de configuraci√≥n para despliegue en Vercel, gestionando cabeceras de seguridad y cach√©.
+- `index.html`: Archivo principal con la estructura sem√É¬°ntica y optimizaci√É¬≥n SEO Local (Meta tags, JSON-LD, encabezados optimizados).
+- `styles.css`: Hoja de estilos principal que implementa el dise√É¬±o Dark Tech, variables de color ne√É¬≥n (`#0a0b10`, `#00d4ff`), y efectos de interacci√É¬≥n (hover, zoom, pulse).
+- `script.js`: L√É¬≥gica de interactividad (men√É¬∫ hamburguesa, scroll spy, animaciones fade-in con Intersection Observer).
+- `vercel.json`: Archivo de configuraci√É¬≥n para despliegue en Vercel, gestionando cabeceras de seguridad y cach√É¬©.
 
-## C√≥mo desplegar en Vercel
+## C√É¬≥mo desplegar en Vercel
 
 1. Instala el CLI de Vercel (opcional): `npm i -g vercel`
 2. En la terminal, dentro de esta carpeta, ejecuta: `vercel`
 3. Sigue las instrucciones interactivas para enlazar el proyecto a tu cuenta.
-4. El archivo `vercel.json` se encargar√° autom√°ticamente de aplicar las pol√≠ticas de cach√© para los assets est√°ticos y las cabeceras de seguridad.
+4. El archivo `vercel.json` se encargar√É¬° autom√É¬°ticamente de aplicar las pol√É¬≠ticas de cach√É¬© para los assets est√É¬°ticos y las cabeceras de seguridad.
 
-Alternativamente, puedes subir este repositorio a GitHub y conectarlo directamente en el panel de [Vercel](https://vercel.com/) para despliegues autom√°ticos en cada commit.
+Alternativamente, puedes subir este repositorio a GitHub y conectarlo directamente en el panel de [Vercel](https://vercel.com/) para despliegues autom√É¬°ticos en cada commit.
 
-## Optimizaci√≥n SEO Local
+## Optimizaci√É¬≥n SEO Local
 
-El proyecto est√° configurado para destacar en b√∫squedas dentro de **Mar del Plata**, priorizando los t√©rminos: "soporte t√©cnico", "programador", "hacer web", "computaci√≥n" y "soluciones tecnol√≥gicas".
+El proyecto est√É¬° configurado para destacar en b√É¬∫squedas dentro de **Mar del Plata**, priorizando los t√É¬©rminos: "soporte t√É¬©cnico", "programador", "hacer web", "computaci√É¬≥n" y "soluciones tecnol√É¬≥gicas".
 
-Para monitorear el tr√°fico, puedes integrar la propiedad en **Google Search Console** siguiendo los pasos de verificaci√≥n mediante Google Analytics.
+Para monitorear el tr√É¬°fico, puedes integrar la propiedad en **Google Search Console** siguiendo los pasos de verificaci√É¬≥n mediante Google Analytics.
 
 ## Funcionalidades de Marca y Asistencia
 
 ### Logo con Rayo
-El Ìcono del rayo (a-bolt) est· implementado mediante FontAwesome. Si deseas cambiar el SVG o Ìcono, dirÌgete a index.html y reemplaza la clase a-bolt en el elemento <i class="fas fa-bolt logo-icon"></i>. Su color y animaciÛn de pulso se controlan en styles.css bajo la clase .logo-icon.
+El √≠cono del rayo (a-bolt) est√° implementado mediante FontAwesome. Si deseas cambiar el SVG o √≠cono, dir√≠gete a index.html y reemplaza la clase a-bolt en el elemento <i class="fas fa-bolt logo-icon"></i>. Su color y animaci√≥n de pulso se controlan en styles.css bajo la clase .logo-icon.
 
-### Asistente RobÛtico Interactivo
-El robot que viaja con el usuario est· implementado con el contenedor #robot-assistant. Su estado reacciona a la posiciÛn del scroll de la p·gina modificando el Ìcono dentro del globo de di·logo:
+### Asistente Rob√≥tico Interactivo
+El robot que viaja con el usuario est√° implementado con el contenedor #robot-assistant. Su estado reacciona a la posici√≥n del scroll de la p√°gina modificando el √≠cono dentro del globo de di√°logo:
 - **Inicio**: Saludo (a-hand-sparkles)
-- **Servicios**: Lupa de an·lisis (a-search)
+- **Servicios**: Lupa de an√°lisis (a-search)
 - **Nosotros**: Modo lectura/pensativo (a-book-reader)
-- **Contacto**: Õcono de enviar (a-paper-plane)
+- **Contacto**: √çcono de enviar (a-paper-plane)
 
 Para modificar estos estados, ajusta las variables 
 ewIconClass dentro del window.addEventListener('scroll') en el archivo script.js.
 
-### Comportamiento del Asistente RobÛtico
+### Comportamiento del Asistente Rob√≥tico
 
-#### LÛgica del IntersectionObserver
-El asistente utiliza la API \IntersectionObserver\ de JavaScript para detectar quÈ secciÛn de la p·gina est· actualmente en el centro de la pantalla. Se configurÛ con un \ootMargin\ de \'-40% 0px -40% 0px'\, lo que significa que el ·rea de detecciÛn es una banda horizontal muy estrecha en el centro de la ventana gr·fica. Cuando una etiqueta \<section>\, \<header>\ o \<footer>\ entra en esta ·rea, el observer dispara un evento y lee su \id\ para actualizar el Ìcono del robot.
+#### L√≥gica del IntersectionObserver
+El asistente utiliza la API \IntersectionObserver\ de JavaScript para detectar qu√© secci√≥n de la p√°gina est√° actualmente en el centro de la pantalla. Se configur√≥ con un \ootMargin\ de \'-40% 0px -40% 0px'\, lo que significa que el √°rea de detecci√≥n es una banda horizontal muy estrecha en el centro de la ventana gr√°fica. Cuando una etiqueta \<section>\, \<header>\ o \<footer>\ entra en esta √°rea, el observer dispara un evento y lee su \id\ para actualizar el √≠cono del robot.
 
-#### CÛmo agregar nuevos gestos en el futuro
+#### C√≥mo agregar nuevos gestos en el futuro
 Para agregar o modificar las reacciones del robot a otras secciones, debes:
-1. Asegurarte de que la nueva secciÛn en el HTML tenga un \id\ definido (por ejemplo, \<section id="mi-nueva-seccion">\).
-2. Abrir el archivo \script.js\ y buscar la declaraciÛn del \obotObserver\.
-3. Dentro del \if (currentSection === ...)\, agregar un bloque \else if\ con el ID de tu secciÛn y asignarle una clase de FontAwesome a \
+1. Asegurarte de que la nueva secci√≥n en el HTML tenga un \id\ definido (por ejemplo, \<section id="mi-nueva-seccion">\).
+2. Abrir el archivo \script.js\ y buscar la declaraci√≥n del \obotObserver\.
+3. Dentro del \if (currentSection === ...)\, agregar un bloque \else if\ con el ID de tu secci√≥n y asignarle una clase de FontAwesome a \
 ewIconClass\.
 
 Ejemplo:
@@ -56,68 +56,72 @@ Ejemplo:
 else if (currentSection === 'mi-nueva-seccion') {
     newIconClass = 'fas fa-cogs';
 }
-\\\`nEl script se encargar· autom·ticamente de ejecutar la transiciÛn suave en el cambio de Ìconos.
+\\\`nEl script se encargar√° autom√°ticamente de ejecutar la transici√≥n suave en el cambio de √≠conos.
 
-### NavegaciÛn Visual del Asistente
-El robot cuenta ahora con un panel de navegaciÛn flotante lateral (.robot-nav-menu) que se despliega al hacer clic sobre Èl.
+### Navegaci√≥n Visual del Asistente
+El robot cuenta ahora con un panel de navegaci√≥n flotante lateral (.robot-nav-menu) que se despliega al hacer clic sobre √©l.
 Este panel integra 4 botones interactivos implementados mediante SVGs puros tipo 'Line Icons' (trazo fino, sin rellenos complejos), lo que garantiza un peso ultra ligero y escalabilidad infinita:
 1. **Inicio:** SVG de casa minimalista (d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5...")
-2. **Servicios:** SVG de cuadrÌcula/herramientas (<rect> x4)
-3. **Nosotros:** SVG de usuarios y conexiones (<circle>, <path> m˙ltiples)
-4. **Contacto:** SVG de aviÛn de papel/envÌo (<polygon>, <line>)
+2. **Servicios:** SVG de cuadr√≠cula/herramientas (<rect> x4)
+3. **Nosotros:** SVG de usuarios y conexiones (<circle>, <path> m√∫ltiples)
+4. **Contacto:** SVG de avi√≥n de papel/env√≠o (<polygon>, <line>)
 
-Todos comparten un marco estÈtico controlado por CSS (ackdrop-filter: blur(10px)) para un look cristalizado y transparente. Al interactuar con ellos, JavaScript invoca el mÈtodo nativo \scrollIntoView({behavior: 'smooth'})\ para desplazarse fluidamente hacia la secciÛn deseada, ocultando la burbuja de saludo temporalmente durante la navegaciÛn.
+Todos comparten un marco est√©tico controlado por CSS (ackdrop-filter: blur(10px)) para un look cristalizado y transparente. Al interactuar con ellos, JavaScript invoca el m√©todo nativo \scrollIntoView({behavior: 'smooth'})\ para desplazarse fluidamente hacia la secci√≥n deseada, ocultando la burbuja de saludo temporalmente durante la navegaci√≥n.
 
-### Sistema de NavegaciÛn Sincronizada
+### Sistema de Navegaci√≥n Sincronizada
 
-El asistente robÛtico emplea un sistema unificado de iconos (SVGs en formato 'Line Icons', trazado fino en color cian #00d4ff) configurados en un arreglo centralizado dentro de \script.js\ (\obotSectionsData\).
+El asistente rob√≥tico emplea un sistema unificado de iconos (SVGs en formato 'Line Icons', trazado fino en color cian #00d4ff) configurados en un arreglo centralizado dentro de \script.js\ (\obotSectionsData\).
 
-Este diseÒo garantiza que:
-1. **Men˙ de navegaciÛn:** Los botones inyectados en \.robot-nav-menu\ derivan autom·ticamente de este arreglo.
-2. **Indicador de estado:** La burbuja que flota sobre la cabeza del robot se sincroniza mostrando el mismo Ìcono de la secciÛn actual (detectada por \IntersectionObserver\). La burbuja ahora tiene formato de pÌldora transl˙cida (\gba(0,0,0,0.5)\) con animaciÛn de apariciÛn suave.
+Este dise√±o garantiza que:
+1. **Men√∫ de navegaci√≥n:** Los botones inyectados en \.robot-nav-menu\ derivan autom√°ticamente de este arreglo.
+2. **Indicador de estado:** La burbuja que flota sobre la cabeza del robot se sincroniza mostrando el mismo √≠cono de la secci√≥n actual (detectada por \IntersectionObserver\). La burbuja ahora tiene formato de p√≠ldora transl√∫cida (\gba(0,0,0,0.5)\) con animaci√≥n de aparici√≥n suave.
 
-#### AÒadir Nuevas Secciones
-Para agregar una nueva secciÛn al radar del asistente y a su men˙ interactivo:
-1. Aseg˙rate de que exista una etiqueta \<section id="mi-nueva-seccion">\ en el HTML.
-2. Abre \script.js\ y aÒade un nuevo objeto al array \obotSectionsData\: 
+#### A√±adir Nuevas Secciones
+Para agregar una nueva secci√≥n al radar del asistente y a su men√∫ interactivo:
+1. Aseg√∫rate de que exista una etiqueta \<section id="mi-nueva-seccion">\ en el HTML.
+2. Abre \script.js\ y a√±ade un nuevo objeto al array \obotSectionsData\: 
 \\\javascript
 {
     id: 'mi-nueva-seccion',
     label: 'Nueva',
     iconSvg: '<svg>...</svg>' // Tu SVG personalizado
 }
-\\\`nEl robot inyectar· el nuevo botÛn y reaccionar· a esta nueva secciÛn autom·ticamente.
+\\\`nEl robot inyectar√° el nuevo bot√≥n y reaccionar√° a esta nueva secci√≥n autom√°ticamente.
 
 ### Incidencias
-- **[Resuelto]** Se detectÛ error de carga/renderizado tras cambios en el robot (las secciones con efecto fade-in dejaron de aparecer). Causa: Bloque de cÛdigo huÈrfano y error de sintaxis en el archivo \script.js\ al intentar declarar el IntersectionObserver. Se procediÛ a la estabilizaciÛn y limpieza del cÛdigo. Los servicios y el robot asistente ahora cargan correctamente.
+- **[Resuelto]** Se detect√≥ error de carga/renderizado tras cambios en el robot (las secciones con efecto fade-in dejaron de aparecer). Causa: Bloque de c√≥digo hu√©rfano y error de sintaxis en el archivo \script.js\ al intentar declarar el IntersectionObserver. Se procedi√≥ a la estabilizaci√≥n y limpieza del c√≥digo. Los servicios y el robot asistente ahora cargan correctamente.
 
 ### Asistente Persistente
 
-Se rediseÒÛ el comportamiento del robot (\#robot-assistant\) asegurando que tenga visibilidad permanente (\display: flex\, \position: fixed\). Nunca se oculta ni se elimina del DOM.
+Se redise√±√≥ el comportamiento del robot (\#robot-assistant\) asegurando que tenga visibilidad permanente (\display: flex\, \position: fixed\). Nunca se oculta ni se elimina del DOM.
 
-El componente \#robot-bubble\ ya no es un indicador de estado constante, sino un **elemento temporal de interacciÛn** tipo tooltip. Aparece din·micamente a los 2 segundos de carga para saludar al usuario y desaparece de forma autom·tica y suave a los 7 segundos mediante \opacity\. Si el usuario interact˙a con el robot antes de este lapso, el globo se oculta inmediatamente, cediendo protagonismo al panel de navegaciÛn.
+El componente \#robot-bubble\ ya no es un indicador de estado constante, sino un **elemento temporal de interacci√≥n** tipo tooltip. Aparece din√°micamente a los 2 segundos de carga para saludar al usuario y desaparece de forma autom√°tica y suave a los 7 segundos mediante \opacity\. Si el usuario interact√∫a con el robot antes de este lapso, el globo se oculta inmediatamente, cediendo protagonismo al panel de navegaci√≥n.
 
 ### Fix: Estabilidad del Asistente
 
-- **ContenciÛn del Globo (Overflow):** Se corrigiÛ un problema visual donde el globo de texto (\#robot-bubble\) desbordaba la pantalla. Se le asignÛ \position: absolute\ con anclaje a la derecha (\ight: 0\), \max-width: 200px\ y \white-space: normal\ para forzar saltos de lÌnea ordenados.
-- **RestauraciÛn de State-Sync:** Al separar la burbuja de texto, los Ìconos sincronizados perdieron su contenedor. Se creÛ un nuevo elemento independiente (\#robot-head-indicator\) dedicado a alojar los Ìconos de cada secciÛn. El \IntersectionObserver\ se ha reconectado a este elemento, recuperando la animaciÛn de cambio y la precisiÛn de secciÛn. Adem·s, se agregaron registros (\console.log\) para facilitar el debug de la detecciÛn de secciones en el viewport.
+- **Contenci√≥n del Globo (Overflow):** Se corrigi√≥ un problema visual donde el globo de texto (\#robot-bubble\) desbordaba la pantalla. Se le asign√≥ \position: absolute\ con anclaje a la derecha (\ight: 0\), \max-width: 200px\ y \white-space: normal\ para forzar saltos de l√≠nea ordenados.
+- **Restauraci√≥n de State-Sync:** Al separar la burbuja de texto, los √≠conos sincronizados perdieron su contenedor. Se cre√≥ un nuevo elemento independiente (\#robot-head-indicator\) dedicado a alojar los √≠conos de cada secci√≥n. El \IntersectionObserver\ se ha reconectado a este elemento, recuperando la animaci√≥n de cambio y la precisi√≥n de secci√≥n. Adem√°s, se agregaron registros (\console.log\) para facilitar el debug de la detecci√≥n de secciones en el viewport.
 
 ### Ajustes de UI
 
-- Se reposicionÛ el globo de bienvenida debajo del robot para mejorar la visibilidad de la interfaz.
+- Se reposicion√≥ el globo de bienvenida debajo del robot para mejorar la visibilidad de la interfaz.
 
-### OptimizaciÛn de InteracciÛn
+### Optimizaci√≥n de Interacci√≥n
 
-- Se redujo el texto de guÌa y se implementÛ un intervalo de 20 segundos para mejorar la experiencia de usuario (UX).
+- Se redujo el texto de gu√≠a y se implement√≥ un intervalo de 20 segundos para mejorar la experiencia de usuario (UX).
 
-### OptimizaciÛn T·ctil
+### Optimizaci√≥n T√°ctil
 
-- Se eliminÛ el comportamiento por defecto de 'tap highlight' y se ajustÛ la jerarquÌa de capas (z-index) para evitar superposiciÛn en mÛviles.
+- Se elimin√≥ el comportamiento por defecto de 'tap highlight' y se ajust√≥ la jerarqu√≠a de capas (z-index) para evitar superposici√≥n en m√≥viles.
 
 ### Estilo Visual
 
-- Se mejorÛ la tipografÌa y el gradiente del H1 para una identidad visual m·s tecnolÛgica.
+- Se mejor√≥ la tipograf√≠a y el gradiente del H1 para una identidad visual m√°s tecnol√≥gica.
 
 ### UI Update
 
-- Se rediseÒÛ el H1 separando marca y servicio para mejorar la legibilidad y estÈtica profesional.
+- Se redise√±√≥ el H1 separando marca y servicio para mejorar la legibilidad y est√©tica profesional.
+
+### UI M√≥vil
+
+- Se redujo el tama√±o de la burbuja de interacci√≥n al 50% en dispositivos m√≥viles para mejorar el espacio visual.

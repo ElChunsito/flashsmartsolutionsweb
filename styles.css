@@ -696,15 +696,24 @@ ul {
     }
     
     #robot {
-        transform: translateY(-50%) scale(0.75);
-        right: 5px;
+        transform: translateY(-50%) scale(0.5);
+        right: 10px;
         top: 50%;
         bottom: auto;
         z-index: 999;
     }
     
     #robot.pulse {
-        transform: translateY(-50%) scale(calc(0.75 * 1.15));
+        transform: translateY(-50%) scale(calc(0.5 * 1.15));
+    }
+    
+    #robot-bubble, .robot-bubble {
+        transform: translateY(-50%) scale(1.4); /* Renderiza a escala 0.7 (70%) en pantalla cancelando parcialmente el scale(0.5) del padre */
+        transform-origin: right center;
+        max-width: 90px;
+        font-size: 0.85rem;
+        padding: 6px 8px;
+        margin-top: 22px;
     }
     
     .whatsapp-float, .whatsapp-button {
@@ -745,6 +754,8 @@ ul {
     align-items: center;
     transition: right 0.5s ease, transform 0.3s ease;
     cursor: pointer;
+    transform-origin: center;
+    padding: 10px; /* Asegura un área de toque (touch target) cómoda */
 }
 
 #robot.pulse {
