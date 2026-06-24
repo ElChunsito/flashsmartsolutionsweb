@@ -193,14 +193,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     
                     const robotAssistant = document.getElementById('robot-assistant');
                     if(robotAssistant) {
-                        robotAssistant.style.transform = 'translateY(-50%) scale(1.1)';
+                        robotAssistant.classList.add('pulse');
                     }
                     
                     setTimeout(() => {
                         robotHeadIndicator.innerHTML = data.iconSvg;
                         robotHeadIndicator.classList.add('show');
                         if(robotAssistant) {
-                            robotAssistant.style.transform = 'translateY(-50%) scale(1)';
+                            robotAssistant.classList.remove('pulse');
                         }
                     }, 300);
                 }
